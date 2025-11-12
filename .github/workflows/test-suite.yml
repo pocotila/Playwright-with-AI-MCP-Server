@@ -1,0 +1,31 @@
+name: Full Test Suite
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  playwright:
+    name: E2E Tests (Playwright)
+    uses: ./.github/workflows/playwright.yml
+
+  mcp-server:
+    name: MCP Server Tests
+    uses: ./.github/workflows/mcp-server.yml
+
+  validate:
+    name: Validate All Tests
+    needs: [playwright, mcp-server]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check test results
+        run: |
+          if [ "${{ needs.playwright.result }}" == "success" ] && [ "${{ needs.mcp-server.result }}" == "success" ]; then
+            echo "All tests passed successfully!"
+            exit 0
+          else
+            echo "Some tests failed. Check the test results for details."
+            exit 1
+          fi

@@ -1,0 +1,20 @@
+{
+  "name": "playwright-bmw-tests",
+  "version": "1.0.0",
+  "description": "Playwright tests for BMW.ro with MCP server",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:mini": "playwright test --config=playwright.mini.config.ts",
+    "test:mini:headed": "playwright test --config=playwright.mini.config.ts --headed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0",
+    "@types/node": "^20.9.0",
+    "typescript": "^5.2.2"
+  }
+}
