@@ -1,4 +1,4 @@
-# BMW.ro Test Automation with Playwright and MCP Server
+# Mini.ro Test Automation with Playwright and Express MCP Server
 
 [![Full Test Suite](https://github.com/{owner}/{repo}/actions/workflows/test-suite.yml/badge.svg)](https://github.com/{owner}/{repo}/actions/workflows/test-suite.yml)
 
